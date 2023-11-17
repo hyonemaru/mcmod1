@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:carrot"
+    },"X": {
+      "item": "minecraft:cake"
+    }
+  },
+  "result": {
+    "item": "addfoodmod:carrot_cake",
+    "count": 3
+  }
+}

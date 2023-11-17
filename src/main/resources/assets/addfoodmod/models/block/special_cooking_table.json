@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "addfoodmod:blocks/special_cooking_table_top",
+    "front": "addfoodmod:blocks/special_cooking_table_front_off",
+    "side": "addfoodmod:blocks/special_cooking_table_side"
+  }
+}

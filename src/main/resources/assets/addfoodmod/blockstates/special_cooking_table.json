@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model":  "addfoodmod:special_cooking_table" },
+    "facing=south": { "model": "addfoodmod:special_cooking_table", "y": 180 },
+    "facing=west":  { "model": "addfoodmod:special_cooking_table", "y": 270 },
+    "facing=east":  { "model": "addfoodmod:special_cooking_table", "y": 90 }
+  }
+}

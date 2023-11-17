@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    },{
+      "item": "minecraft:sugar"
+    },{
+      "item": "addfoodmod:plain_cookie"
+    }
+  ],
+  "result": {
+    "item": "addfoodmod:oreo_cookie",
+    "count": 1
+  }
+}
