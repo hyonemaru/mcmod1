@@ -3,6 +3,7 @@ item.cheese.name=Cheese
 item.plain_cookie.name=PlainCookie
 item.oreo_cookie.name=OreoCookie
 item.carrot_cake.name=CarrotCake
+item.t_book.name=TBook
 tile.compressed_wood_coal.name=81TimesCompressedCharcoal
 tile.wood_coal_block.name=CharcoalBlock
 tile.special_cooking_table.name=SpecialCookingTable

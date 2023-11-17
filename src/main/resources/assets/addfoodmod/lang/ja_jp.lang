@@ -3,6 +3,7 @@ item.cheese.name=チーズ
 item.plain_cookie.name=プレーンクッキー
 item.oreo_cookie.name=オレオクッキー
 item.carrot_cake.name=人参ケーキ
+item.t_book.name=Tブック
 tile.compressed_wood_coal.name=81倍圧縮木炭
 tile.wood_coal_block.name=木炭ブロック
 tile.special_cooking_table.name=特殊調理台

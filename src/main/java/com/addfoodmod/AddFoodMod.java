@@ -33,6 +33,7 @@ public class AddFoodMod {
     public static final Item CARROT_CAKE=new CarrotCake(10,0.8f,false);
     public static final Block SCT = new SpecialCookingTable();
     public static final Block JB = new JumpBlock();
+    public static final Item TBOOK = new TBook();
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event){
         event.getRegistry().register(BAKED_APPLE.setRegistryName(MOD_ID,"baked_apple"));
@@ -44,6 +45,7 @@ public class AddFoodMod {
         event.getRegistry().register(new ItemBlock(WOOD_COAL_BLOCK).setRegistryName(MOD_ID,"wood_coal_block"));
         event.getRegistry().register(new ItemBlock(SCT).setRegistryName(MOD_ID,"special_cooking_table"));
         event.getRegistry().register(new ItemBlock(JB).setRegistryName(MOD_ID,"jump_block"));
+        event.getRegistry().register((TBOOK.setRegistryName(MOD_ID,"t_book")));
     }
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event){
@@ -72,6 +74,8 @@ public class AddFoodMod {
         new ModelResourceLocation(SCT.getRegistryName(),"inventry"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JB),0,
         new ModelResourceLocation(JB.getRegistryName(),"inventry"));
+        ModelLoader.setCustomModelResourceLocation(TBOOK,0,
+        new ModelResourceLocation(TBOOK.getRegistryName(),"invntory"));
     }
 
 
