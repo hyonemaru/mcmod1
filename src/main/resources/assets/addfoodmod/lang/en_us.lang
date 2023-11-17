@@ -7,4 +7,4 @@ tile.compressed_wood_coal.name=81TimesCompressedCharcoal
 tile.wood_coal_block.name=CharcoalBlock
 tile.special_cooking_table.name=SpecialCookingTable
 message.destroyed=%s is destroyed my block
-
+tile.jump_block.name=JumpBlock

@@ -1,6 +1,7 @@
 package com.addfoodmod;
 
 import com.addfoodmod.Blocks.CompressedWoodCoal;
+import com.addfoodmod.Blocks.JumpBlock;
 import com.addfoodmod.Blocks.SpecialCookingTable;
 import com.addfoodmod.Blocks.WoodCoalBlock;
 import com.addfoodmod.Items.*;
@@ -31,6 +32,7 @@ public class AddFoodMod {
     public static final Item OREO_COOKIE = new Oreo_Cookie(7,0.4f,false);
     public static final Item CARROT_CAKE=new CarrotCake(10,0.8f,false);
     public static final Block SCT = new SpecialCookingTable();
+    public static final Block JB = new JumpBlock();
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event){
         event.getRegistry().register(BAKED_APPLE.setRegistryName(MOD_ID,"baked_apple"));
@@ -41,12 +43,14 @@ public class AddFoodMod {
         event.getRegistry().register(new ItemBlock(CWC).setRegistryName(MOD_ID,"compressed_wood_coal"));
         event.getRegistry().register(new ItemBlock(WOOD_COAL_BLOCK).setRegistryName(MOD_ID,"wood_coal_block"));
         event.getRegistry().register(new ItemBlock(SCT).setRegistryName(MOD_ID,"special_cooking_table"));
+        event.getRegistry().register(new ItemBlock(JB).setRegistryName(MOD_ID,"jump_block"));
     }
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event){
         event.getRegistry().register(CWC.setRegistryName(MOD_ID,"compressed_wood_coal"));
         event.getRegistry().register(WOOD_COAL_BLOCK.setRegistryName(MOD_ID,"wood_coal_block"));
         event.getRegistry().register(SCT.setRegistryName(MOD_ID,"special_cooking_table"));
+        event.getRegistry().register(JB.setRegistryName(MOD_ID,"jump_block"));
     }
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event){
@@ -66,6 +70,8 @@ public class AddFoodMod {
         new ModelResourceLocation(WOOD_COAL_BLOCK.getRegistryName(),"inventry"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SCT),0,
         new ModelResourceLocation(SCT.getRegistryName(),"inventry"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JB),0,
+        new ModelResourceLocation(JB.getRegistryName(),"inventry"));
     }
 
 
