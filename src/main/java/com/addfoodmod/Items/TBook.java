@@ -33,8 +33,8 @@ public class TBook extends Item {
             tag.setString("title", "Tutorial Book");
             tag.setString("author", "Acacia");
             NBTTagList pages = new NBTTagList();
-            pages.appendTag(new NBTTagString("Banana \n Tomato"));
-            pages.appendTag(new NBTTagString("Page 2 content"));
+            pages.appendTag(new NBTTagString("tomato\nBanana"));
+            pages.appendTag(new NBTTagString("Page2content"));
 
             tag.setTag("pages", pages);
             writtenBook.setTagCompound(tag);
@@ -49,4 +49,5 @@ public class TBook extends Item {
 
         return new ActionResult<>(EnumActionResult.SUCCESS, heldItem);
     }
+
 }
