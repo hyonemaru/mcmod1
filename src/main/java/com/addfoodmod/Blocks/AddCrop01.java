@@ -44,13 +44,13 @@ public class AddCrop01 extends BlockCrops {
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
         super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 
-        // 下のブロックをチェック
+
         BlockPos down = pos.down();
         IBlockState downState = worldIn.getBlockState(down);
 
-        // 下のブロックが耕された土でない場合
+
         if (downState.getBlock() != Blocks.FARMLAND) {
-            // 作物ブロックを破壊し、種をドロップ
+
             dropBlockAsItem(worldIn, pos, state, 0);
             worldIn.setBlockToAir(pos);
         }
