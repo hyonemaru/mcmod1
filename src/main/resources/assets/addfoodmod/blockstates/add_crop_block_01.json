@@ -1,12 +1,12 @@
 {
   "variants": {
-    "age=0": { "model": "addfoodmod:block/add_crop_block_01_stage_0" },
-    "age=1": { "model": "addfoodmod:block/add_crop_block_01_stage_1" },
-    "age=2": { "model": "addfoodmod:block/add_crop_block_01_stage_2" },
-    "age=3": { "model": "addfoodmod:block/add_crop_block_01_stage_3" },
-    "age=4": { "model": "addfoodmod:block/add_crop_block_01_stage_4" },
-    "age=5": { "model": "addfoodmod:block/add_crop_block_01_stage_5" },
-    "age=6": { "model": "addfoodmod:block/add_crop_block_01_stage_6" },
-    "age=7": { "model": "addfoodmod:block/add_crop_block_01_stage_7" }
+    "age=0": { "model": "addfoodmod:add_crop_block_01_stage_0" },
+    "age=1": { "model": "addfoodmod:add_crop_block_01_stage_1" },
+    "age=2": { "model": "addfoodmod:add_crop_block_01_stage_2" },
+    "age=3": { "model": "addfoodmod:add_crop_block_01_stage_3" },
+    "age=4": { "model": "addfoodmod:add_crop_block_01_stage_4" },
+    "age=5": { "model": "addfoodmod:add_crop_block_01_stage_5" },
+    "age=6": { "model": "addfoodmod:add_crop_block_01_stage_6" },
+    "age=7": { "model": "addfoodmod:add_crop_block_01_stage_7" }
   }
 }
