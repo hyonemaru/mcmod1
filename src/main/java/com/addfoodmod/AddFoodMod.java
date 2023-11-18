@@ -38,6 +38,7 @@ public class AddFoodMod {
     public static final Block ADD_CROP_01 = new AddCrop01();
     public static final Item ADD_SEED_01 = new AddSeed01();
     public static final Item ITEM_ADD_CROP_01 = new ItemAddCrop01();
+    public static final Item IOL = new IumpOfLife();
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event){
         event.getRegistry().register(BAKED_APPLE.setRegistryName(MOD_ID,"baked_apple"));
@@ -54,6 +55,8 @@ public class AddFoodMod {
         event.getRegistry().register(ADD_SEED_01.setRegistryName(MOD_ID,"add_seed_01"));
         event.getRegistry().register(ITEM_ADD_CROP_01.setRegistryName(MOD_ID,"item_add_crop_01"));
         event.getRegistry().register(new ItemBlock(ADD_CROP_01).setRegistryName(MOD_ID,"add_crop_block_01"));
+        event.getRegistry().register(IOL.setRegistryName(MOD_ID,"iump_of_life"));
+
     }
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event){
@@ -96,5 +99,7 @@ public class AddFoodMod {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ADD_CROP_01),f,
             new ModelResourceLocation(ADD_CROP_01.getRegistryName(),"age="+f));
         }
+        ModelLoader.setCustomModelResourceLocation(IOL,0,
+        new ModelResourceLocation(IOL.getRegistryName(),"inventory"));
     }
 }
