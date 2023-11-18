@@ -18,7 +18,7 @@ import java.awt.print.Book;
 
 @Mod(modid = "addfoodmod",
         name = "AddFoodMod",
-        version ="1.1.0",
+        version ="1.2.3",
         acceptedMinecraftVersions = "[1.12]")
 @Mod.EventBusSubscriber(modid = "addfoodmod")
 public class AddFoodMod {

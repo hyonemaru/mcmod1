@@ -3,6 +3,8 @@ package com.addfoodmod.Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -17,13 +19,20 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import scala.collection.parallel.ParIterableLike;
 
+import javax.annotation.Nullable;
 import java.util.Iterator;
+import java.util.List;
 
 public class IumpOfLife extends Item {
     public IumpOfLife(){
         this.setCreativeTab(CreativeTabs.MISC);
         this.setMaxStackSize(64);
         this.setUnlocalizedName("iump_of_life");
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(I18n.format("item.tutorial.iumo_of_life"));
     }
 
     @Override
