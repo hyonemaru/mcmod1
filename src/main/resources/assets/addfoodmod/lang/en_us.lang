@@ -11,3 +11,4 @@ message.destroyed=%s is destroyed my block
 tile.jump_block.name=JumpBlock
 book.page1=Tomato\nBanana
 book.page2=Page 2 content
+book.page3=Please set the language setting to Japanese

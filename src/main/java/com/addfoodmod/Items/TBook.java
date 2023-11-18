@@ -1,5 +1,7 @@
 package com.addfoodmod.Items;
 
+import com.sun.jna.platform.unix.X11;
+import ibxm.Player;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,6 +16,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 
 public class TBook extends Item {
@@ -23,6 +26,7 @@ public class TBook extends Item {
         this.setUnlocalizedName("t_book");
         this.setMaxStackSize(1);
     }
+
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 
         ItemStack heldItem = playerIn.getHeldItem(handIn);
@@ -38,22 +42,31 @@ public class TBook extends Item {
             NBTTagList pages = new NBTTagList();
             String page1Text = "{\"text\":\"" + I18n.format("book.page1") + "\"}";
             String page2Text = "{\"text\":\"" + I18n.format("book.page2") + "\"}";
+            String page3Text = "{\"text\":\"" + I18n.format("book.page3") + "\"}";
 
             pages.appendTag(new NBTTagString(page1Text));
             pages.appendTag(new NBTTagString(page2Text));
+            pages.appendTag(new NBTTagString(page3Text));
 
             tag.setTag("pages", pages);
             writtenBook.setTagCompound(tag);
 
-
-            playerIn.addItemStackToInventory(writtenBook);
-
-            if (!playerIn.capabilities.isCreativeMode) {
-                heldItem.shrink(1);
+            if(!isInventoryFull(playerIn)) {
+                playerIn.addItemStackToInventory(writtenBook);
+                if (!playerIn.capabilities.isCreativeMode) {
+                    heldItem.shrink(1);
+                }
             }
         }
 
         return new ActionResult<>(EnumActionResult.SUCCESS, heldItem);
     }
-
+    public boolean isInventoryFull(EntityPlayer player) {
+        for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+            if (player.inventory.getStackInSlot(i).isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
