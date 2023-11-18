@@ -9,4 +9,5 @@ tile.wood_coal_block.name=木炭ブロック
 tile.special_cooking_table.name=特殊調理台
 tile.jump_block.name=ジャンプブロック
 message.destroyed=%sはブロックを破壊した
-
+book.page1=トマト\nバナナ
+book.page2=ページ2の内容

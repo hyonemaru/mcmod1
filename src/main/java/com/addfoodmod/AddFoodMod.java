@@ -15,6 +15,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
 
+import java.awt.print.Book;
+
 
 @Mod(modid = "addfoodmod",
         name = "AddFoodMod",
@@ -34,6 +36,7 @@ public class AddFoodMod {
     public static final Block SCT = new SpecialCookingTable();
     public static final Block JB = new JumpBlock();
     public static final Item TBOOK = new TBook();
+    public static final Item CBOOK = new MyCustomBook();
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event){
         event.getRegistry().register(BAKED_APPLE.setRegistryName(MOD_ID,"baked_apple"));
@@ -46,6 +49,7 @@ public class AddFoodMod {
         event.getRegistry().register(new ItemBlock(SCT).setRegistryName(MOD_ID,"special_cooking_table"));
         event.getRegistry().register(new ItemBlock(JB).setRegistryName(MOD_ID,"jump_block"));
         event.getRegistry().register((TBOOK.setRegistryName(MOD_ID,"t_book")));
+        event.getRegistry().register((CBOOK.setRegistryName(MOD_ID,"c_book")));
     }
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event){
@@ -75,6 +79,8 @@ public class AddFoodMod {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JB),0,
         new ModelResourceLocation(JB.getRegistryName(),"inventry"));
         ModelLoader.setCustomModelResourceLocation(TBOOK,0,
+        new ModelResourceLocation(TBOOK.getRegistryName(),"invntory"));
+        ModelLoader.setCustomModelResourceLocation(CBOOK,0,
         new ModelResourceLocation(TBOOK.getRegistryName(),"invntory"));
     }
 

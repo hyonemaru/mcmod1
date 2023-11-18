@@ -1,10 +1,12 @@
 package com.addfoodmod.Items;
 
+import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemWrittenBook;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
@@ -12,6 +14,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
+
 
 public class TBook extends Item {
     public TBook(){
@@ -33,8 +36,11 @@ public class TBook extends Item {
             tag.setString("title", "Tutorial Book");
             tag.setString("author", "Acacia");
             NBTTagList pages = new NBTTagList();
-            pages.appendTag(new NBTTagString("tomato\nBanana"));
-            pages.appendTag(new NBTTagString("Page2content"));
+            String page1Text = "{\"text\":\"" + I18n.format("book.page1") + "\"}";
+            String page2Text = "{\"text\":\"" + I18n.format("book.page2") + "\"}";
+
+            pages.appendTag(new NBTTagString(page1Text));
+            pages.appendTag(new NBTTagString(page2Text));
 
             tag.setTag("pages", pages);
             writtenBook.setTagCompound(tag);
