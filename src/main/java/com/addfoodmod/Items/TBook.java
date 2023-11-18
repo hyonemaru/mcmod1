@@ -15,6 +15,7 @@ import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
@@ -26,7 +27,14 @@ public class TBook extends Item {
         this.setUnlocalizedName("t_book");
         this.setMaxStackSize(1);
     }
-
+    public boolean isInventoryFull(EntityPlayer player) {
+        for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+            if (player.inventory.getStackInSlot(i).isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 
         ItemStack heldItem = playerIn.getHeldItem(handIn);
@@ -52,21 +60,15 @@ public class TBook extends Item {
             writtenBook.setTagCompound(tag);
 
             if(!isInventoryFull(playerIn)) {
-                playerIn.addItemStackToInventory(writtenBook);
-                if (!playerIn.capabilities.isCreativeMode) {
+                boolean wasAdded = playerIn.inventory.addItemStackToInventory(writtenBook);
+                if (wasAdded && !playerIn.capabilities.isCreativeMode) {
                     heldItem.shrink(1);
+                }else if(!playerIn.capabilities.isCreativeMode){
+                    playerIn.sendMessage(new TextComponentString("MAX Inventory"));
                 }
             }
         }
 
         return new ActionResult<>(EnumActionResult.SUCCESS, heldItem);
-    }
-    public boolean isInventoryFull(EntityPlayer player) {
-        for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-            if (player.inventory.getStackInSlot(i).isEmpty()) {
-                return false;
-            }
-        }
-        return true;
     }
 }
