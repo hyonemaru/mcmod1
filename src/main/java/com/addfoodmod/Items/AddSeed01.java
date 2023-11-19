@@ -13,6 +13,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class AddSeed01 extends ItemSeeds {
 
@@ -38,5 +40,19 @@ public class AddSeed01 extends ItemSeeds {
             return EnumActionResult.FAIL;
         }
     }
+
+    @SubscribeEvent
+    public void onBlockBreak(BlockEvent.HarvestDropsEvent event) {
+
+        if (event.getState().getBlock() == Blocks.TALLGRASS) {
+
+//            event.getDrops().add(new ItemStack(AddFoodMod.ADD_SEED_01, 1));
+
+            if (event.getWorld().rand.nextFloat() < 0.1F) {
+                event.getDrops().add(new ItemStack(AddFoodMod.ADD_SEED_01));
+            }
+        }
+    }
+
 }
 

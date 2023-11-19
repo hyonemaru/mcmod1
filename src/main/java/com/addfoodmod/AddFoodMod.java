@@ -3,14 +3,21 @@ package com.addfoodmod;
 import com.addfoodmod.Blocks.*;
 import com.addfoodmod.Items.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 import javax.jws.WebParam;
 import java.awt.print.Book;
@@ -39,6 +46,27 @@ public class AddFoodMod {
     public static final Item ADD_SEED_01 = new AddSeed01();
     public static final Item ITEM_ADD_CROP_01 = new ItemAddCrop01();
     public static final Item IOL = new IumpOfLife();
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(ADD_SEED_01);
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+    @SubscribeEvent
+    public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        NBTTagCompound playerData = event.player.getEntityData();
+        NBTTagCompound data;
+
+        if (!playerData.hasKey(EntityPlayer.PERSISTED_NBT_TAG)) {
+            playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, new NBTTagCompound());
+        }
+        data = playerData.getCompoundTag(EntityPlayer.PERSISTED_NBT_TAG);
+
+        if (!event.player.isCreative()&&!data.getBoolean("playedBefore")) {
+            event.player.inventory.addItemStackToInventory(new ItemStack(TBOOK, 1));
+            data.setBoolean("playedBefore", true);
+        }
+    }
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event){
         event.getRegistry().register(BAKED_APPLE.setRegistryName(MOD_ID,"baked_apple"));
