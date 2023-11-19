@@ -1,23 +1,14 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "FEF",
-    "EDE",
-    "FEF"
-  ],
-  "key": {
-    "E": {
-      "item": "minecraft:apple"
-    },
-    "F": {
-      "item": "minecraft:stone"
-    },
-    "D": {
-      "item": "minecraft:diamond_block"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "addfoodmod:item_add_crop_01"
+    },{
+      "item": "addfoodmod:item_add_crop_01"
     }
-  },
+  ],
   "result": {
-    "item": "addfoodmod:cheese",
+    "item": "minecraft:dye",
     "count": 1
   }
 }
