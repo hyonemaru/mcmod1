@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "addfoodmod:item_add_crop_01"
+    },{
+      "item": "addfoodmod:item_add_crop_01"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "count": 2
+  }
+}

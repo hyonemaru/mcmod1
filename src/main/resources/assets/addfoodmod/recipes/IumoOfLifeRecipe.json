@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#Y#",
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "tag": "addfoodmod:raw_meat"
+    },
+    "X":{
+        "item": "minecraft:dye"
+},"Y": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "result": {
+    "item": "addfoodmod:iump_of_life",
+    "count": 3
+  }
+}
