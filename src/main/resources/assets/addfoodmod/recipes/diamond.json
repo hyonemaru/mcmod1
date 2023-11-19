@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FEF",
+    "EDE",
+    "FEF"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:apple"
+    },
+    "F": {
+      "item": "minecraft:stone"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "result": {
+    "item": "addfoodmod:cheese",
+    "count": 1
+  }
+}
