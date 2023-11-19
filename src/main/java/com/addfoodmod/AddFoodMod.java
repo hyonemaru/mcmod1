@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 @Mod(modid = "addfoodmod",
         name = "AddFoodMod",
-        version ="1.2.3",
+        version ="1.2.6",
         acceptedMinecraftVersions = "[1.12]")
 @Mod.EventBusSubscriber(modid = "addfoodmod")
 public class AddFoodMod {
