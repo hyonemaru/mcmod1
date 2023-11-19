@@ -11,6 +11,7 @@ tile.jump_block.name=ジャンプブロック
 item.add_seed_01.name=謎の種
 item.iump_of_life.name=生命の塊
 item.item_add_crop_01.name=謎の作物
+item.fruit_knife.name=フルーツナイフ
 item.tutorial.iumo_of_life=作物に使うと大体の場合大量に手に入る
 message.destroyed=%sはブロックを破壊した
 book.page1=AddFoodMod\nこのMODはその名の通り\n食料に関するアイテムなど\nそう言った物を追加する\nMODです\nレシピを知りたければ\nJEIを入れましょう。

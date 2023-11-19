@@ -11,9 +11,9 @@ message.destroyed=%s is destroyed my block
 tile.jump_block.name=JumpBlock
 item.add_seed_01.name=Mysterious Seed
 item.iump_of_life.name=IumpOfLife
+item.fruit_knife.name=FruitKnife
 item.item_add_crop_01.name=Mysterious Crop
-item.tutorial.iumo_of_life
-item.tutorial.iumo_of_life=When used on crops, it is usually available in large quantities.
+item.tutorial.iump_of_life=When used on crops, it is usually available in large quantities.
 book.page1=Tomato\nBanana
 book.page2=Page 2 content
 book.page3=Please set the language setting to Japanese

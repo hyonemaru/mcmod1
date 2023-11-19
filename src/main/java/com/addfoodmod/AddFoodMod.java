@@ -2,9 +2,9 @@ package com.addfoodmod;
 
 import com.addfoodmod.Blocks.*;
 import com.addfoodmod.Items.*;
+import com.addfoodmod.Tools.FruitKnife;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -12,15 +12,13 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-
-import javax.jws.WebParam;
-import java.awt.print.Book;
 
 
 @Mod(modid = "addfoodmod",
@@ -46,7 +44,7 @@ public class AddFoodMod {
     public static final Item ADD_SEED_01 = new AddSeed01();
     public static final Item ITEM_ADD_CROP_01 = new ItemAddCrop01();
     public static final Item IOL = new IumpOfLife();
-
+   public  static final Item FRUIT_KNIFE =new FruitKnife(EnumHelper.addToolMaterial("KNIFE_MATERIAL", 1, 125, 6.0F, -3.0F, 10));
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(ADD_SEED_01);
@@ -85,7 +83,7 @@ public class AddFoodMod {
         event.getRegistry().register(ITEM_ADD_CROP_01.setRegistryName(MOD_ID,"item_add_crop_01"));
         event.getRegistry().register(new ItemBlock(ADD_CROP_01).setRegistryName(MOD_ID,"add_crop_block_01"));
         event.getRegistry().register(IOL.setRegistryName(MOD_ID,"iump_of_life"));
-
+        event.getRegistry().registerAll(FRUIT_KNIFE);
     }
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event){
@@ -130,5 +128,7 @@ public class AddFoodMod {
         }
         ModelLoader.setCustomModelResourceLocation(IOL,0,
         new ModelResourceLocation(IOL.getRegistryName(),"inventory"));
+        ModelLoader.setCustomModelResourceLocation(FRUIT_KNIFE,0,
+        new ModelResourceLocation(FRUIT_KNIFE.getRegistryName(),"inventory"));
     }
 }
