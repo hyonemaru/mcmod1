@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#Y#",
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "type": "forge:ore_dict",
+      "ore": "meat"
+    },
+    "X": {
+      "item": "minecraft:dye",
+      "data": 15
+    },
+    "Y": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "result": {
+    "item": "addfoodmod:iump_of_life",
+    "count": 1
+  }
+}

@@ -40,7 +40,7 @@ public class IumpOfLife extends Item {
         if (!worldIn.isRemote) {
             IBlockState state = worldIn.getBlockState(pos);
             Block block = state.getBlock();
-
+            ItemStack heldItem = player.getHeldItem(hand);
             if(block instanceof BlockCrops){
 
                 BlockCrops crop = (BlockCrops) block;
@@ -82,7 +82,7 @@ public class IumpOfLife extends Item {
                 for (ItemStack drop : drops) {
                     Block.spawnAsEntity(worldIn, pos, drop);
                 }
-
+                heldItem.shrink(1);
             }
         }
         return EnumActionResult.SUCCESS;

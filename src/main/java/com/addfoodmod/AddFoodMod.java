@@ -51,6 +51,7 @@ public class AddFoodMod {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(ADD_SEED_01);
         MinecraftForge.EVENT_BUS.register(this);
+        MyOreDictionary.init();
     }
     @SubscribeEvent
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
