@@ -1,0 +1,28 @@
+{
+
+  "display": {
+    "icon": {
+      "item": "minecraft:crafting_table"
+    },
+    "title": {
+      "translate": "advancements.add.ctable.title"
+    },
+    "description": {
+      "translate": "advancements.add.ctable.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+  },
+  "parent":"addfoodmod:add/root",
+  "criteria": {
+    "crafting_table": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:crafting_table"
+          }
+        ]
+      }
+  }
+}
+}

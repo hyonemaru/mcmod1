@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:apple"
+      "item": "addfoodmod:baked_apple"
     },
     "title": {
       "translate": "advancements.tab.title"
@@ -9,13 +9,13 @@
     "description": {
       "translate": "advancements.tab.description"
     },
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
     "show_toast": false,
     "announce_to_chat": false
   },
   "criteria": {
-    "root": {
+    "crafting_table": {
       "trigger": "minecraft:impossible"
-    }
   }
+}
 }
